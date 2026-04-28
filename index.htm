@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>보험 무료 상담 신청</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h2 {
+  text-align: center;
+}
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+button {
+  background: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background: #0056b3;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <h2>무료 보험 상담 신청</h2>
+
+  <input type="text" id="name" placeholder="이름" required>
+  <input type="number" id="age" placeholder="나이" required>
+  <input type="text" id="phone" placeholder="연락처" required>
+
+  <select id="type">
+    <option value="실손보험">실손보험</option>
+    <option value="자동차보험">자동차보험</option>
+    <option value="태아보험">태아보험</option>
+    <option value="화재보험">화재보험</option>
+  </select>
+
+  <button onclick="submitForm()">무료 상담 신청</button>
+</div>
+
+<script>
+function submitForm() {
+  const data = {
+    name: document.getElementById("name").value,
+    age: document.getElementById("age").value,
+    phone: document.getElementById("phone").value,
+    type: document.getElementById("type").value
+  };
+
+  if (!data.name || !data.age || !data.phone) {
+    alert("모든 정보를 입력해주세요.");
+    return;
+  }
+
+  fetch("여기에_구글앱스크립트_URL_넣기", {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
+  .then(res => res.text())
+  .then(() => {
+    alert("접수 완료! 상담을 위해 카카오톡으로 이동합니다.");
+    window.location.href = "여기에_카카오톡_오픈채팅링크";
+  })
+  .catch(() => {
+    alert("오류 발생. 다시 시도해주세요.");
+  });
+}
+</script>
+
+</body>
+</html>
