@@ -76,12 +76,11 @@ function submitForm() {
     return;
   }
 
-  fetch("https://script.google.com/macros/s/AKfycbxA6ux2yL4bZkl-CRdRcSD7IH76Z96gW6npC0Hn-oUmGESdQ5m6-urukUkXGiboZ5Z_/exec", {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json"
-    },
+fetch("https://script.google.com/macros/s/AKfycbxA6ux2yL4bZkl-CRdRcSD7IH76Z96gW6npC0Hn-oUmGESdQ5m6-urukUkXGiboZ5Z_/exec", {
+  method: "POST",
+  mode: "no-cors",
+  body: new URLSearchParams(data)
+});
     body: JSON.stringify(data)
   });
 
