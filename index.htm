@@ -76,12 +76,10 @@ function submitForm() {
     return;
   }
 
-fetch("https://script.google.com/macros/s/AKfycbxA6ux2yL4bZkl-CRdRcSD7IH76Z96gW6npC0Hn-oUmGESdQ5m6-urukUkXGiboZ5Z_/exec", {
-  method: "POST",
-  mode: "no-cors",
-  body: new URLSearchParams(data)
-});
-    body: JSON.stringify(data)
+  fetch("https://script.google.com/macros/s/AKfycbxA6ux2yL4bZkl-CRdRcSD7IH76Z96gW6npC0Hn-oUmGESdQ5m6-urukUkXGiboZ5Z_/exec", {
+    method: "POST",
+    mode: "no-cors",
+    body: new URLSearchParams(data)
   });
 
   alert("접수 완료! 상담을 위해 카카오톡으로 이동합니다.");
