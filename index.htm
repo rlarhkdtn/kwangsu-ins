@@ -75,7 +75,7 @@ function submitForm() {
     alert("모든 정보를 입력해주세요.");
     return;
   }
-fetch("https://script.google.com/macros/s/AKfycby11acw6O-LLBY8HSXBH_oDXnbXIV5kRnOjBrLkmoNq61utUpCA_XW_YWnidVO2FJi2/exec", {
+fetch("https://script.google.com/macros/s/AKfycbxA6ux2yL4bZkl-CRdRcSD7IH76Z96gW6npC0Hn-oUmGESdQ5m6-urukUkXGiboZ5Z_/exec", {
   method: "POST",
   mode: "no-cors",
   headers: {
@@ -83,7 +83,6 @@ fetch("https://script.google.com/macros/s/AKfycby11acw6O-LLBY8HSXBH_oDXnbXIV5kRn
   },
   body: JSON.stringify(data)
 });
-
 
 alert("접수 완료! 상담을 위해 카카오톡으로 이동합니다.");
 window.location.href = "여기에_카카오톡_오픈채팅링크";
