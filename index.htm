@@ -82,8 +82,11 @@ function submitForm() {
     body: new URLSearchParams(data)
   });
 
-  alert("접수 완료! 상담을 위해 카카오톡으로 이동합니다.");
-  window.location.href = "여기에_카카오톡_오픈채팅링크";
+  // 🔥 전송 시간 확보 (중요)
+  setTimeout(() => {
+    alert("접수 완료! 상담을 위해 카카오톡으로 이동합니다.");
+    window.location.href = "여기에_카카오톡_오픈채팅링크";
+  }, 1500);
 }
 </script>
 
